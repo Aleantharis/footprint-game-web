@@ -10,11 +10,16 @@ body {
 button {
     background-color: #4c4e50;
     font-weight: bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
 }
 
 button > img {
-    height: 100%;
-    width: auto;
+    width: 50%;
+    height: auto;
+    /* width: auto; */
 }
 
 div > img {

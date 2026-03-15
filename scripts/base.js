@@ -17,12 +17,16 @@ var choicesPanel = document.getElementById('pnlChoices');
 var footPrintLabel = document.getElementById('lblFootPrint');
 var guess1 = document.getElementById('btnG1');
 var img1 = document.getElementById('imgG1');
+var imgF1 = document.getElementById('imgG1Foot');
 var guess2 = document.getElementById('btnG2');
 var img2 = document.getElementById('imgG2');
+var imgF2 = document.getElementById('imgG2Foot');
 var guess3 = document.getElementById('btnG3');
 var img3 = document.getElementById('imgG3');
+var imgF3 = document.getElementById('imgG3Foot');
 var guess4 = document.getElementById('btnG4');
 var img4 = document.getElementById('imgG4');
+var imgF4 = document.getElementById('imgG4Foot');
 
 var progressbar = document.getElementById('pgTimer');
 
@@ -57,6 +61,10 @@ function gameOver() {
     guess3.classList.add(logic.getCorrectNum() === parseInt(guess3.getAttribute('pokemonId')) ? 'correct' : 'wrong');
     guess4.classList.add(logic.getCorrectNum() === parseInt(guess4.getAttribute('pokemonId')) ? 'correct' : 'wrong');
 
+    imgF1.classList.remove('hidden');
+    imgF2.classList.remove('hidden');
+    imgF3.classList.remove('hidden');
+    imgF4.classList.remove('hidden');
     // guess1.classList.remove('wrong');
     // guess2.classList.remove('wrong');
     // guess3.classList.remove('wrong');
@@ -87,6 +95,10 @@ async function roundOver(result) {
     guess3.classList.add(correct === parseInt(guess3.getAttribute('pokemonId')) ? 'correct' : 'wrong');
     guess4.classList.add(correct === parseInt(guess4.getAttribute('pokemonId')) ? 'correct' : 'wrong');
     
+    imgF1.classList.remove('hidden');
+    imgF2.classList.remove('hidden');
+    imgF3.classList.remove('hidden');
+    imgF4.classList.remove('hidden');
     // gameState = "Paused";
     // await new Promise(r => setTimeout(r, 5000));
     // gameState = "Running";
@@ -154,7 +166,7 @@ function clickHandler(event) {
     }
 }
 
-function updateSingleMon(btn, img, pkmnID) {
+function updateSingleMon(btn, img, imgF, pkmnID) {
     btn.setAttribute('pokemonId', pkmnID);
 
     if(Math.floor(Math.random() * CONST.SHINY_ODDS) === 0) {
@@ -165,6 +177,8 @@ function updateSingleMon(btn, img, pkmnID) {
         img.setAttribute('src', (CONST.POKEMON_IMG_URL + pkmnID + ".png"));
         btn.classList.remove('shiny');
     }
+    imgF.setAttribute('src', ('./img/footprints/' + pkmnID + ".png"));
+    imgF.classList.add('hidden');
 
     btn.classList.remove('wrong');
     btn.classList.remove('correct');
@@ -176,10 +190,10 @@ function updateImages(fp, guessArr) {
     progressbar.setAttribute('value', 0);
     footPrint.setAttribute('src', './img/footprints/' + fp + '.png');
 
-    updateSingleMon(guess1, img1, guessArr[0]);
-    updateSingleMon(guess2, img2, guessArr[1]);
-    updateSingleMon(guess3, img3, guessArr[2]);
-    updateSingleMon(guess4, img4, guessArr[3]);
+    updateSingleMon(guess1, img1, imgF1, guessArr[0]);
+    updateSingleMon(guess2, img2, imgF2, guessArr[1]);
+    updateSingleMon(guess3, img3, imgF3, guessArr[2]);
+    updateSingleMon(guess4, img4, imgF4, guessArr[3]);
 
     footPrintPanel.classList.remove('correct');
     footPrintPanel.classList.remove('wrong');
