@@ -165,7 +165,7 @@ function updateSingleMon(btn, img, pkmnID) {
 function updateImages(fp, guessArr) {
     gameState = "Running";
 
-    footPrint.setAttribute('src', '../img/footprints/' + fp + '.png');
+    footPrint.setAttribute('src', './img/footprints/' + fp + '.png');
 
     updateSingleMon(guess1, img1, guessArr[0]);
     updateSingleMon(guess2, img2, guessArr[1]);
