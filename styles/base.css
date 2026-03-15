@@ -96,11 +96,24 @@ label, output {
 
 
     background-color: #4c4e50;
-    background-image: url('../imgs/Background.png');
+    background-image: url('../img/Background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-size: contain; */
 }
+
+/* @media (orientation: landscape) {
+  .pnlFootPrint {
+    
+  }
+}
+
+@media (orientation: portrait) {
+  .pnlFootPrint {
+    
+  }
+} */
 
 .pnlChoices {
     width: 100vw;
