@@ -33,6 +33,11 @@ function roundNumChange() {
 }
 document.getElementById("drpRounds").addEventListener("change", roundNumChange);
 
+function roundTimerChange() {
+    logic.setRoundTime(parseInt(document.getElementById("drpTimer").value));
+}
+document.getElementById("drpTimer").addEventListener("change", roundTimerChange);
+
 function gameOver() {
     clearInterval(gameLoop);
     gameState = "GameOver";
@@ -66,6 +71,7 @@ function gameOver() {
 async function roundOver(result) {
     gameState = "Paused";
     pauseTicks = 0;
+    progressbar.setAttribute('value', 0);
 
     var correct = logic.getCorrectNum();
 
@@ -94,16 +100,18 @@ function startGame() {
     progressbar.setAttribute('value', 0);
     gameLoop = setInterval(function () {
         // only tick when all images are loaded
-        if(img1.complete && img2.complete && img3.complete && img4.complete && (gameState !== "Paused")){
+        if(img1.complete && img2.complete && img3.complete && img4.complete && (gameState !== "Paused") && parseInt(document.getElementById("drpTimer").value) !== -1){
             logic.tick();
             progressbar.setAttribute('value', logic.getCurrentTime());
         }
         else if(gameState === "Paused") {
+            progressbar.setAttribute('max', 5);
             if(pauseTicks++ < 5) {
                 progressbar.setAttribute('value', pauseTicks);
             }
             else {
-                gameState = "Running"
+                gameState = "Running";
+                progressbar.setAttribute('max', logic.getRoundTime());
                 logic.nextRound();
             }
         }
@@ -165,6 +173,7 @@ function updateSingleMon(btn, img, pkmnID) {
 function updateImages(fp, guessArr) {
     gameState = "Running";
 
+    progressbar.setAttribute('value', 0);
     footPrint.setAttribute('src', './img/footprints/' + fp + '.png');
 
     updateSingleMon(guess1, img1, guessArr[0]);
@@ -176,7 +185,7 @@ function updateImages(fp, guessArr) {
     footPrintPanel.classList.remove('wrong');
 }
 
-var logic = new GameLogic(updateImages, gameOver, roundOver, 5, parseInt(document.getElementById("drpRounds").value));
+var logic = new GameLogic(updateImages, gameOver, roundOver, parseInt(document.getElementById("drpTimer").value), parseInt(document.getElementById("drpRounds").value));
 
 guess1.addEventListener("pointerup", clickHandler, false);
 guess1.addEventListener("pointercancel", clickHandler, false);

@@ -120,6 +120,10 @@ export class GameLogic {
         return this.#roundTime;
     }
 
+    setRoundTime(roundTime) {
+        this.#roundTime = roundTime;
+    }
+
     getScore() {
         return (this.#score + "/" + this.#maxRounds);
     }
