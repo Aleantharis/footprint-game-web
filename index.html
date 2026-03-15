@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Footprint Game</title>
+        <link rel="stylesheet" href="styles/base.css" />
+        <script src="scripts/base.js" type="module"></script>
+    </head>
+    <body>
+    <div class="pnlMenu">
+         <label for="drpRounds">Rounds: </label>
+         <select id="drpRounds">
+             <option selected>1</option>
+             <option>3</option>
+             <option>5</option>
+             <option>10</option>
+             <option>15</option>
+             <option>20</option>
+         </select>
+         <progress id="pgTimer"></progress>
+     </div>
+    <div id="pnlFootPrint" class="pnlFootPrint">
+        <label id="lblFootPrint" for="imgFootPrint">Footprint game!</label>
+        <img id="imgFootPrint" alt="Footprint"/>
+    </div>
+    <div id="pnlChoices" class="pnlChoices">
+        <button id="btnG1">
+            <img id="imgG1"/>
+            <label for="imgG1">Click to Start</label>
+        </button>
+        <button id="btnG2">
+            <img id="imgG2"/>
+            <label for="imgG2">Click to Start</label>
+        </button>
+        <button id="btnG3">
+            <img id="imgG3"/>
+            <label for="imgG3">Click to Start</label>
+        </button>
+        <button id="btnG4">
+            <img id="imgG4"/>
+            <label for="imgG4">Click to Start</label>
+        </button>
+    </div>
+</html>

@@ -7,4 +7,4 @@ Used resources:
 | Asset | Location |
 |:-----------|:-------:|
 | Footprint sprites | [Veekun](https://veekun.com/dex/downloads) |
-| Pokémon names <br /> Pokémon sprites | [PokeAPI](https://pokeapi.co/) <br /> (&copy; The Pokémon Company) |
+| Pokémon sprites | [PokeAPI](https://pokeapi.co/) <br /> (&copy; The Pokémon Company) |

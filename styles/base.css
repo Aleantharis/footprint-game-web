@@ -1,0 +1,134 @@
+body {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	background-color: #1a1d21;
+    color:white;
+}
+
+button {
+    background-color: #4c4e50;
+    font-weight: bold;
+}
+
+button > img {
+    height: 100%;
+    width: auto;
+}
+
+div > img {
+    height: 30%;
+    width: auto;
+}
+
+.pnlMenu {
+	display: flex;
+	flex-direction: row;
+	/* width: 50vw; */
+	width: 100%;
+}
+
+.pnlMenu {
+	/* flex-grow: 1; */
+	max-height: 10%;
+	margin-bottom: 10px;
+	display: inline-flex;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+	margin-right: 10px;
+	/* margin-bottom: 10px; */
+	/* flex: 1 0 auto; */
+}
+
+.pnlMenu>* {
+	margin-right: 10px;
+}
+
+progress {
+    width: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+select,
+input {
+	background: #00000099;
+	border: 1px solid white;
+	border-radius: 5px;
+	color: white;
+	/* padding: 10px;
+    margin-bottom: 10px; */
+	text-align: center;
+}
+
+label, output {
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+.pnlMenu {
+    display: inline-flex;
+    flex-direction: row;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: #00000099;
+	text-align: center;
+
+    width: 100%;
+    height: 5vh;
+}
+
+.pnlMenu>* {
+    height: 100%;
+    align-items: center;
+}
+
+.pnlFootPrint {
+    width: 100vw;
+    height: 47.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: #4c4e50;
+    background-image: url('../imgs/Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pnlChoices {
+    width: 100vw;
+    height: 47.5vh;
+}
+
+.pnlChoices>* {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+
+.gameRunning > button > label, .pnlFootPrint.gameRunning > label{
+    display:none;
+}
+
+.pnlChoices:not(.gameRunning) > button > img, .pnlFootPrint:not(.gameRunning) > img {
+    display: none;
+}
+
+button.shiny {
+    background-color: gold;
+}
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
