@@ -56,11 +56,15 @@ progress {
   width: 100%;
   border: 1px solid white;
   border-radius: 5px;
+  appearance: none;
+  color:#4c4e50;
+  accent-color: #4c4e50;
+  background-color: #1a1d21;
 }
 
 progress::-webkit-progress-bar,
 progress {
-    background-color: #1a1d21;
+  background-color: #1a1d21;
 }
 
 progress::-webkit-progress-value,
