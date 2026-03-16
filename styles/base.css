@@ -42,7 +42,7 @@ button > img {
 } */
 
 div > img {
-  height: 30%;
+  height: 30vh;
   width: auto;
 }
 
