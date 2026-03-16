@@ -38,7 +38,6 @@ div > img {
 }
 
 .pnlMenu {
-  /* flex-grow: 1; */
   max-height: 10%;
   margin-bottom: 10px;
   display: inline-flex;
@@ -55,6 +54,18 @@ div > img {
 
 progress {
   width: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-bar,
+progress {
+    background-color: #1a1d21;
+}
+
+progress::-webkit-progress-value,
+progress::-moz-progress-bar {
+  background-color:#4c4e50 !important;
 }
 
 .hidden {
@@ -63,7 +74,8 @@ progress {
 
 select,
 input {
-  background: #00000099;
+  /* background: #00000099; */
+  background-color: #1a1d21;
   border: 1px solid white;
   border-radius: 5px;
   color: white;
@@ -82,9 +94,9 @@ output {
 .pnlMenu {
   display: inline-flex;
   flex-direction: row;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   border-radius: 5px;
-  background: #00000099;
+  /* background: #00000099; */
   text-align: center;
 
   width: 98vw;
@@ -92,7 +104,7 @@ output {
 
   margin-right: 1vw;
   margin-left: 1vw;
-  margin-bottom: 1vh
+  margin-bottom: 1vh;
 }
 
 .pnlMenu > * {
@@ -111,8 +123,8 @@ output {
   background-image: url("../img/Background.png");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover; */
-  background-size: contain;
+  background-size: cover;
+  /* background-size: contain; */
 }
 
 /* @media (orientation: landscape) {
